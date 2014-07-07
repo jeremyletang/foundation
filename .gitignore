@@ -1,0 +1,11 @@
+.DS_Store
+*~
+*#
+*.o
+*.so
+*.swp
+*.dylib
+*.dSYM
+*.rlib
+doc
+target

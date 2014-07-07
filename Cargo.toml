@@ -1,0 +1,18 @@
+[package]
+
+name = "foundation"
+version = "0.0.1"
+authors = ["Jeremy Letang <letang.jeremy@gmail.com>"]
+
+[[lib]]
+
+name = "foundation"
+crate-type = ["dylib", "rlib"]
+
+[dependencies.objcruntime]
+
+git = "https://github.com/jeremyletang/objcruntime.git"
+
+[[bin]]
+
+name = "test"
