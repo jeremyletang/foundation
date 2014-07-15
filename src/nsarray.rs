@@ -28,7 +28,9 @@ pub trait Array<T: objcruntime::Id>: Collection + objcruntime::Id {
         if self.is_empty() {
             None
         } else {
-            Some(objcruntime::Id::from_id(m![self.as_id() firstObject]))
+            let t: T = objcruntime::Id::from_id(m![self.as_id() firstObject]);
+            m![t.as_id() retain];
+            Some(t)
         }
     }
 
@@ -36,7 +38,9 @@ pub trait Array<T: objcruntime::Id>: Collection + objcruntime::Id {
         if self.is_empty() {
             None
         } else {
-            Some(objcruntime::Id::from_id(m![self.as_id() lastObject]))
+            let t: T = objcruntime::Id::from_id(m![self.as_id() lastObject]);
+            m![t.as_id() retain];
+            Some(t)
         }
     }
 
@@ -44,7 +48,9 @@ pub trait Array<T: objcruntime::Id>: Collection + objcruntime::Id {
         if self.len() < idx {
             None
         } else {
-            Some(objcruntime::Id::from_id(m![self.as_id() objectAtIndex: idx]))
+            let t: T = objcruntime::Id::from_id(m![self.as_id() objectAtIndex: idx]);
+            m![t.as_id() retain];
+            Some(t)
         }
     }
 }
