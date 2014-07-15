@@ -20,26 +20,18 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#![crate_name = "foundation"]
-#![desc = "Rust binding to the objective-c foundation library"]
-#![license = "MIT"]
-#![crate_type = "rlib"]
-#![crate_type = "dylib"]
-#![allow(dead_code)]
-#![allow(missing_doc)]
-#![allow(unused_unsafe)]
-#![feature(macro_rules, phase, unsafe_destructor)]
 
-#[phase(plugin)]
-extern crate objcruntime;
-extern crate objcruntime;
+pub struct NSRect {
+    origin: NSPoint,
+    size: NSSize
+}
 
-pub use self::nsstring::NSString;
-pub use self::nsarray::{NSArray, Array};
-pub use self::nsmutable_array::NSMutableArray;
-pub use self::types::{NSRect, NSSize, NSPoint};
+pub struct NSPoint {
+    x: f64,
+    y: f64
+}
 
-mod nsstring;
-mod nsarray;
-mod nsmutable_array;
-mod types;
+pub struct NSSize {
+    width: f64,
+    height: f64
+}
